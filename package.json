@@ -1,31 +1,32 @@
 {
   "name": "softgames_assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "SoftGames Task",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack",
-    "watch": "webpack --watch",
-    "serve": "cd dist && live-server"
+    "build": "cross-env NODE_ENV=production webpack",
+    "serve": "webpack-dev-server --hot"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tomar123/SoftGames_Assignment.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "deepaktomar2031@gmail.com",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/tomar123/SoftGames_Assignment/issues"
   },
   "homepage": "https://github.com/tomar123/SoftGames_Assignment#readme",
+  "dependencies": {
+    "pixi-particles": "^4.3.1",
+    "pixi.js": "^5.2.1"
+  },
   "devDependencies": {
-    "live-server": "^1.2.1",
-    "npm-run-all": "^4.1.5",
-    "ts-loader": "^9.2.6",
-    "typescript": "^4.4.4",
-    "webpack": "^5.58.2",
-    "webpack-cli": "^4.9.0"
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "cross-env": "^7.0.2",
+    "file-loader": "^6.2.0",
+    "rimraf": "^2.6.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
