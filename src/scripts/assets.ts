@@ -11,3 +11,4 @@ export const cardsPath: string[] = [
     require('../images/card7.png'),
     require('../images/card8.png')
 ];
+export const emojiPath = require('../images/emoji.png');

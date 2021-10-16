@@ -1,12 +1,15 @@
-// Menu scene Main Menu in the Game
+// Menu scene is responible for presenting the main menu of the application
 
 import * as PIXI from 'pixi.js';
 import { GameEngine } from "../../core/game-engine";
 import { CardsScene } from '../card-scene/cards-scene';
+import { TextEmojiScene } from '../text-emoji-scene/text-emoji-scene';
 import { BaseScene, SceneConstructor } from "../scene";
 
+const MENU_OFFSET = 50;
+
 export class MenuScene extends BaseScene {
-    private scenes: SceneConstructor[] = [CardsScene];
+    private scenes: SceneConstructor[] = [CardsScene,TextEmojiScene];
     constructor(protected gameEngine: GameEngine) {
         super(gameEngine);
         super.initialized();
@@ -25,7 +28,14 @@ export class MenuScene extends BaseScene {
         cardsOption.x = 0;
         cardsOption.y = 0;
 
+        const textEmojiOption = new PIXI.Text('2. Text & Image', style);
+        textEmojiOption.interactive = true;
+        textEmojiOption.buttonMode = true;
+        textEmojiOption.x = 0;
+        textEmojiOption.y = cardsOption.y + cardsOption.height + MENU_OFFSET;
+
         mainContainer.addChild(cardsOption);
+        mainContainer.addChild(textEmojiOption);
 
         mainContainer.x = (gameEngine.renderer.screen.width - mainContainer.width) * .5;
         mainContainer.y = (gameEngine.renderer.screen.height - mainContainer.height) * .5;
@@ -36,6 +46,9 @@ export class MenuScene extends BaseScene {
             switch (event.target) {
                 case cardsOption:
                     sceneToPush = this.scenes[0]
+                    break;
+                case textEmojiOption:
+                    sceneToPush = this.scenes[1];
                     break;
             }
             if (sceneToPush) {
