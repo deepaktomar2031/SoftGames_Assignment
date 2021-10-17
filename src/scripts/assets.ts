@@ -12,3 +12,7 @@ export const cardsPath: string[] = [
     require('../images/card8.png')
 ];
 export const emojiPath = require('../images/emoji.png');
+export const firePath = [
+    require("../images/particle.png"), 
+    require("../images/fire.png")
+];
