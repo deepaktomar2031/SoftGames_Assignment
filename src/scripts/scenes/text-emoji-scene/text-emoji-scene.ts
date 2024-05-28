@@ -11,7 +11,7 @@ import { emojiPath } from '../../assets';
 let screenWidth = 0;
 let screenHeight = 0;
 
-const wordsArray = "Hello World Java Javascript Pixi Task Python Programming Frontend Backend Database Coding Soft Games MSSQL MySQL".split(' ');
+const wordsArray = "Hello World Java Javascript Pixi Task Python Programming Frontend Backend Database Coding Games MSSQL MySQL".split(' ');
 
 function combineTextEmoji(delta: number, context: { timePassed: number, textEmoji: TextEmoji, texture: PIXI.Texture }) {
     context.timePassed += delta;
